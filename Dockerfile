@@ -149,4 +149,4 @@ USER $USERNAME
 
 # Run the startup.bash script to ensure that 
 # the VNC and noVNC servers are running.
-ENTRYPOINT .contconf/startup.bash
+ENTRYPOINT /home/$USERNAME/.contconf/startup.bash
