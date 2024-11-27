@@ -1,5 +1,5 @@
 {
-  "image": "braughtg/vnc-novnc-codespace-base:1.0.0",  
+  "image": "braughtg/vnc-novnc-base",  
   "forwardPorts": [5901, 6901],
   "portsAttributes": {
     "5901": {
