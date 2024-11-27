@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM mcr.microsoft.com/devcontainers/base:debian
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/New_York

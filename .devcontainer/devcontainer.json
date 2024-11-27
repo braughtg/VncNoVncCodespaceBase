@@ -1,0 +1,12 @@
+{
+  "image": "braughtg/vnc-novnc-codespace-base:1.0.0",  
+  "forwardPorts": [5901, 6901],
+  "portsAttributes": {
+    "5901": {
+      "label": "VNC"
+    },
+    "6901": {
+      "label": "NoVNC"
+    }
+  }
+}

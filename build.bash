@@ -2,8 +2,8 @@
 
 # Modify the following variables as appropraite when building new base inmages.
 DOCKER_HUB_USER="braughtg"
-IMAGE="vnc-novnc-base"
-TAG="1.2.1"
+IMAGE="vnc-novnc-codespace-base"
+TAG="1.0.0"
 PLATFORMS=linux/amd64,linux/arm64
 
 # Check for the local build flag -d
