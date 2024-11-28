@@ -20,7 +20,7 @@ vncserver \
 if [ -f /home/vscode/.contconf/launch.bash ];
 then
   echo "Running launch.bash"
-  source /home/vscode/.contconf/launch.bash
+  source /home/student/.contconf/launch.bash
 fi
 
 sleep infinity

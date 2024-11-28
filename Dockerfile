@@ -5,9 +5,9 @@ ENV TZ=America/New_York
 
 # Username and password for the non-root user in the container.
 # If these are changed then it is also necessary to change directory
-# names in the panel.bash and panel.desktop files.
-ARG USERNAME=vscode
-ARG PASSWD=vscode
+# names in the panel.bash, panel.desktop and devcontainer.json files.
+ARG USERNAME=student
+ARG PASSWD=student
 
 # Install the necessary system software.
 # The list of system software was adapted from the cypress/base:16.14.2 Dockerfile.
@@ -80,10 +80,10 @@ RUN apt-get install -y --no-install-recommends \
  && cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
 # Create the non-root user inside the container and give them sudo privlidges.
-#RUN useradd \
-#    -m $USERNAME -p "$(openssl passwd -1 $PASSWD)" \
-#    -s /bin/bash \
-#    -G sudo
+RUN useradd \
+    -m $USERNAME -p "$(openssl passwd -1 $PASSWD)" \
+    -s /bin/bash \
+    -G sudo
 
 USER $USERNAME
 WORKDIR /home/$USERNAME
@@ -102,26 +102,24 @@ USER $USERNAME
 RUN mkdir .contconf \
  && mkdir -p .config/autostart
 
-# startup.bash is run when the container starts.  It sets the ownership and group
-# for the FarmData2 repo and the fd2test directories and starts the VNC and noVNC
+# startup.bash is run when the container starts and starts the VNC and noVNC
 # servers.
 COPY --chown=$USERNAME:$USERNAME ./startup.bash .contconf/startup.bash
-# .bash_aliases defines a few shortcut commands that are useful when doing FarmData2
-# development work.
+# .bash_aliases defines a few shortcut commands.
 COPY --chown=$USERNAME:$USERNAME ./bash_aliases .bash_aliases
 # panel.bash configures the launcheer panel at the bottom of the XFCE4 desktop by adding
-# icons for Mousepad, VSCodium and Firefox...
+# icons for Mousepad, VSCodium and Firefox.
 COPY --chown=$USERNAME:$USERNAME ./panel.bash .contconf/panel.bash
 # panel.desktop ensures that the panel.bash script is run when the XFCE4 desktop is started.
 COPY --chown=$USERNAME:$USERNAME ./panel.desktop .config/autostart/panel.desktop
-# terminalrc has the setting that enables unicode in the terminal
-#COPY --chown=$USERNAME:$USERNAME ./terminalrc .config/xfce4/terminal/terminalrc
+# terminalrc has the setting that enables unicode (e.g. emoji) in the terminal
+COPY --chown=$USERNAME:$USERNAME ./terminalrc .config/xfce4/terminal/terminalrc
 
 RUN chmod +x .contconf/startup.bash \
  && chmod +x .contconf/panel.bash \
  && chmod +x .config/autostart/panel.desktop
 
-# Do some git configuration so that the student doesn't have to.
+# Do some basic git configuration.
 RUN git config --global credential.helper store \
  && git config --global merge.conflictstyle diff3 \
  && git config --global merge.tool vscode \
@@ -146,7 +144,10 @@ RUN apt-get clean -y \
  && rm -rf /var/lib/apt/lists/*
 
 USER $USERNAME
+WORKDIR /home/$USERNAME
 
-# Run the startup.bash script to ensure that 
-# the VNC and noVNC servers are running.
+# Run the startup.bash script to ensure that the VNC and noVNC servers are running.
+# Note: This doesn't run in a Codespace, but will run if the container is opened
+# using Docker Desktop. This is run by .devcontainer/devcontainer.json if it is opened
+# in a Codespace.
 ENTRYPOINT /home/$USERNAME/.contconf/startup.bash
