@@ -10,7 +10,7 @@
 if [ ! -e /home/vscode/.config/xfce4/panel/launcher-50 ];
 then
   mkdir -p /home/vscode/.config/xfce4/panel/launcher-50
-  cp /usr/share/applications/mousepad.desktop /home/vscode/.config/xfce4/panel/launcher-50
+  cp /usr/share/applications/org.xfce.mousepad.desktop /home/vscode/.config/xfce4/panel/launcher-50
 
   mkdir -p /home/vscode/.config/xfce4/panel/launcher-51
   cp /usr/share/applications/codium.desktop /home/vscode/.config/xfce4/panel/launcher-51
