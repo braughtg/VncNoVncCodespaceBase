@@ -115,7 +115,7 @@ COPY --chown=$USERNAME:$USERNAME ./panel.bash .contconf/panel.bash
 # panel.desktop ensures that the panel.bash script is run when the XFCE4 desktop is started.
 COPY --chown=$USERNAME:$USERNAME ./panel.desktop .config/autostart/panel.desktop
 # terminalrc has the setting that enables unicode in the terminal
-COPY --chown=$USERNAME:$USERNAME ./terminalrc .config/xfce4/terminal/terminalrc
+#COPY --chown=$USERNAME:$USERNAME ./terminalrc .config/xfce4/terminal/terminalrc
 
 RUN chmod +x .contconf/startup.bash \
  && chmod +x .contconf/panel.bash \

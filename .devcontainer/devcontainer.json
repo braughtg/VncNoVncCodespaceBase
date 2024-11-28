@@ -8,5 +8,6 @@
     "6901": {
       "label": "NoVNC"
     }
-  }
+  },
+  "postStartCommand": "bash /home/vscode/.contconf/startup.bash"
 }
