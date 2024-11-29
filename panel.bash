@@ -9,6 +9,7 @@
 
 if [ ! -e /home/student/.config/xfce4/panel/launcher-50 ];
 then
+
   mkdir -p /home/student/.config/xfce4/panel/launcher-50
   cp /usr/share/applications/org.xfce.mousepad.desktop /home/student/.config/xfce4/panel/launcher-50
 
@@ -20,7 +21,7 @@ then
 
   xfce4-panel -r
   xfconf-query -c xfce4-panel -p /plugins/plugin-50 -t string -s "launcher" --create
-  xfconf-query -c xfce4-panel -p /plugins/plugin-50/items -t string -s "mousepad.desktop" -a --create
+  xfconf-query -c xfce4-panel -p /plugins/plugin-50/items -t string -s "org.xfce.mousepad.desktop" -a --create
 
   xfconf-query -c xfce4-panel -p /plugins/plugin-51 -t string -s "launcher" --create
   xfconf-query -c xfce4-panel -p /plugins/plugin-51/items -t string -s "codium.desktop" -a --create

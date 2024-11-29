@@ -10,5 +10,6 @@
     }
   },
   "remoteUser": "student",
+  "workspaceFolder": "/home/student",
   "postStartCommand": "bash /home/student/.contconf/startup.bash",
 }

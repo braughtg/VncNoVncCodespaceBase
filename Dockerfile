@@ -79,6 +79,10 @@ RUN apt-get install -y --no-install-recommends \
         net-tools \
  && cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
+ # Set the xfce-termial as the default terminal to avoid issues with zutty
+ # inside of docker.
+ RUN echo "1" | update-alternatives --config x-terminal-emulator
+
 # Create the non-root user inside the container and give them sudo privlidges.
 RUN useradd \
     -m $USERNAME -p "$(openssl passwd -1 $PASSWD)" \
