@@ -9,6 +9,6 @@
       "label": "NoVNC"
     }
   },
+  "remoteUser": "student",
   "postStartCommand": "bash /home/student/.contconf/startup.bash",
-  "postAttachCommand": "cd /home/student"
 }
