@@ -154,4 +154,4 @@ WORKDIR /home/$USERNAME
 # Note: This doesn't run in a Codespace, but will run if the container is opened
 # using Docker Desktop. This is run by .devcontainer/devcontainer.json if it is opened
 # in a Codespace.
-ENTRYPOINT /home/$(whoami)/.contconf/startup.bash
+ENTRYPOINT ["/home/$USERNAME/.contconf/startup.bash"]
