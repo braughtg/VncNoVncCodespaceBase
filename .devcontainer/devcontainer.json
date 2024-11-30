@@ -11,5 +11,29 @@
   },
   "remoteUser": "student",
   "workspaceFolder": "/home/student",
-  "postStartCommand": "bash /home/student/.contconf/startup.bash"
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "tasks": {
+          "version": "2.0.0",
+          "tasks": [
+            {
+              "label": "Test",
+              "type": "shell",
+              "command": "echo 'Hello World.'",
+              "group": "none",
+              "presentation": {
+                  "reveal": "always",
+                  "panel": "new"
+              },
+              "runOptions": {
+                  "runOn": "folderOpen"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
 }
