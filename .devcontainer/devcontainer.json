@@ -33,6 +33,7 @@
             {
               "label": "Second",
               "type": "shell",
+              "dependsOrder": "sequence",
               "dependsOn": [ "First" ],
               "runOptions": {
                 "runOn": "folderOpen"
@@ -40,7 +41,7 @@
               "command": "echo 'Second Task.'",
               "presentation": {
                 "reveal": "always",
-                "panel": "new"
+                "panel": "shared"
               }
             }
           ]
