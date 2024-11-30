@@ -19,10 +19,9 @@
           "version": "2.0.0",
           "tasks": [
             {
-              "label": "Test",
+              "label": "First",
               "type": "shell",
-              "command": "echo 'Hello World.'",
-              "group": "none",
+              "command": "echo 'First Task.'; sleep 5;",
               "presentation": {
                   "reveal": "always",
                   "panel": "new"
@@ -30,6 +29,16 @@
               "runOptions": {
                   "runOn": "folderOpen"
               }
+            },
+            {
+              "label": "Second",
+              "type": "shell",
+              "command": "echo 'Second Task.'",
+              "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+              },
+              "dependsOn": [ "First" ]
             }
           ]
         }
