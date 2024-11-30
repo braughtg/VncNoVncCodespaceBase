@@ -21,7 +21,7 @@
             {
               "label": "First",
               "type": "shell",
-              "command": "echo 'First Task.'; sleep 5;"
+              "command": "echo 'First Task ABC.'; sleep 5;"
             },
             {
               "label": "Second",
