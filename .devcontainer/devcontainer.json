@@ -11,5 +11,6 @@
   },
   "remoteUser": "student",
   "workspaceFolder": "/home/student",
+  "postCreateCommand": "gh codespace ports visibility 6901:public -c $CODESPACE_NAME",
   "postStartCommand": "bash /home/student/.contconf/startup.bash",
 }
