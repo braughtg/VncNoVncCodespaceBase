@@ -7,7 +7,6 @@ ENV TZ=America/New_York
 # If these are changed then it is also necessary to change directory
 # names in the panel.bash, panel.desktop and devcontainer.json files.
 ARG USERNAME=student
-ENV USERNAME=$USERNAME
 ARG PASSWD=student
 
 # Install the necessary system software.
@@ -152,7 +151,4 @@ USER $USERNAME
 WORKDIR /home/$USERNAME
 
 # Run the startup.bash script to ensure that the VNC and noVNC servers are running.
-# Note: This doesn't run in a Codespace, but will run if the container is opened
-# using Docker Desktop. This is run by .devcontainer/devcontainer.json if it is opened
-# in a Codespace.
-ENTRYPOINT ["/home/$USERNAME/.contconf/startup.bash"]
+ENTRYPOINT .contconf/startup.bash
