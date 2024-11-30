@@ -7,6 +7,7 @@ ENV TZ=America/New_York
 # If these are changed then it is also necessary to change directory
 # names in the panel.bash, panel.desktop and devcontainer.json files.
 ARG USERNAME=student
+ENV USERNAME=$USERNAME
 ARG PASSWD=student
 
 # Install the necessary system software.
