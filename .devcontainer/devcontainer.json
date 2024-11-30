@@ -21,24 +21,27 @@
             {
               "label": "First",
               "type": "shell",
+              "runOptions": {
+                "runOn": "folderOpen"
+              },
               "command": "echo 'First Task.'; sleep 5;",
               "presentation": {
                   "reveal": "always",
                   "panel": "new"
-              },
-              "runOptions": {
-                  "runOn": "folderOpen"
               }
             },
             {
               "label": "Second",
               "type": "shell",
+              "dependsOn": [ "First" ],
+              "runOptions": {
+                "runOn": "folderOpen"
+              },
               "command": "echo 'Second Task.'",
               "presentation": {
                 "reveal": "always",
-                "panel": "shared"
-              },
-              "dependsOn": [ "First" ]
+                "panel": "new"
+              }
             }
           ]
         }
