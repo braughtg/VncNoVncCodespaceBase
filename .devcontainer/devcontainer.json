@@ -21,24 +21,21 @@
             {
               "label": "First",
               "type": "shell",
-              "runOptions": {
-                "runOn": "folderOpen"
-              },
-              "command": "echo 'First Task.'; sleep 5;",
-              "presentation": {
-                  "reveal": "always",
-                  "panel": "new"
-              }
+              "command": "echo 'First Task.'; sleep 5;"
             },
             {
               "label": "Second",
               "type": "shell",
+              "command": "echo 'Second Task.'"
+            },
+            {
+              "label": "Sequence",
+              "type": "shell",
               "dependsOrder": "sequence",
-              "dependsOn": [ "First" ],
+              "dependsOn": [ "First", "Second" ],
               "runOptions": {
                 "runOn": "folderOpen"
               },
-              "command": "echo 'Second Task.'",
               "presentation": {
                 "reveal": "always",
                 "panel": "shared"
