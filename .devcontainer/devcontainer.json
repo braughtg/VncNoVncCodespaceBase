@@ -20,6 +20,10 @@
           "version": "2.0.0",
           "tasks": [
             {
+              "label": "Hide sidebar",
+              "command": "workbench.action.toggleSidebarVisibility"
+            },
+            {
               "label": "Wait for noVNC",
               "type": "shell",
               "command": "./.contconf/waitForNoVNC.bash"
