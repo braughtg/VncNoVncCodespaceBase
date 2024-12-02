@@ -47,7 +47,7 @@
               "id": "openSimpleBrowser",
               "type": "command",
               "command": "simpleBrowser.show",
-              "args": ["https://${CODESPACE_NAME}-6901.app.github.dev"]
+              "args": ["https://${env:CODESPACE_NAME}-6901.app.github.dev"]
             }
           ]
         }
