@@ -12,6 +12,7 @@
   "remoteUser": "student",
   "workspaceFolder": "/home/student",
   "overrideCommand": false,
+  "onCreateCommand": "echo 'Created the codespace container.'",
   "customizations": {
     "vscode": {
       "settings": {
