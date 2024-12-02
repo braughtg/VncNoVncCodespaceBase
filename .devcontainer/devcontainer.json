@@ -24,15 +24,15 @@
               "command": "./.contconf/waitForNoVNC.bash"
             },
             {
-              "label": "Second",
+              "label": "Open noVNC in Browser",
               "type": "shell",
-              "command": "echo 'Second'"
+              "command": "echo $(jq -r '.CODESPACE_NAME' < /workspaces/.codespaces/shared/enviornment-variables.json)"
             },
             {
               "label": "Sequence",
               "type": "shell",
               "dependsOrder": "sequence",
-              "dependsOn": [ "First", "Second" ],
+              "dependsOn": [ "Wait for noVNC", "Open noVNC in Browser" ],
               "runOptions": {
                 "runOn": "folderOpen"
               },
