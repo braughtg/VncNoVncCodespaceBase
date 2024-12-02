@@ -35,7 +35,7 @@
               "label": "Open Linux Desktop",
               "type": "shell",
               "dependsOrder": "sequence",
-              "dependsOn": [ "Hide UI Elements", "Wait for noVNC", "Open noVNC in Browser" ],
+              "dependsOn": ["Wait for noVNC", "Open noVNC in Browser", "Hide UI Elements" ],
               "runOptions": {
                 "runOn": "folderOpen"
               },
@@ -54,6 +54,7 @@
             },
             {
               "id": "hideUIElements",
+              "type": "command",
               "command": "runCommands", 
 		          "args": {
 			          "commands": [
