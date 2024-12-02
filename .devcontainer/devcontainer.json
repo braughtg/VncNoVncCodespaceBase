@@ -44,7 +44,7 @@
                 "runOn": "folderOpen"
               },
               "presentation": {
-                "reveal": "always",
+                "reveal": "never",
                 "panel": "shared"
               }
             }
@@ -68,10 +68,8 @@
                   "workbench.action.activityBarLocation.hide",
                   "workbench.action.hideEditorTabs",
                   "workbench.action.hideEditorActions",
-                  "workbench.action.togglePanel",
                   "workbench.action.toggleStatusbarVisibility",
-                  "toggle.window.commandCenter",
-                  "toggle.workbench.layoutControl"
+                  "toggle.window.commandCenter"
 			          ]
 		          }
             }
