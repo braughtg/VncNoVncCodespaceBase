@@ -118,10 +118,13 @@ COPY --chown=$USERNAME:$USERNAME ./panel.bash .contconf/panel.bash
 COPY --chown=$USERNAME:$USERNAME ./panel.desktop .config/autostart/panel.desktop
 # terminalrc has the setting that enables unicode (e.g. emoji) in the terminal
 COPY --chown=$USERNAME:$USERNAME ./terminalrc .config/xfce4/terminal/terminalrc
+# waitForNoVNC.bash waits for the noVNC server to startup and be listening on port 6901.
+COPY --chown=$USERNAME:$USERNAME ./waitForNoVNC.bash .contconf/waitForNoVNC
 
 RUN chmod +x .contconf/startup.bash \
  && chmod +x .contconf/panel.bash \
- && chmod +x .config/autostart/panel.desktop
+ && chmod +x .config/autostart/panel.desktop \
+ && chmod +x .contconf/waitForNoVNC
 
 # Do some basic git configuration.
 RUN git config --global credential.helper store \

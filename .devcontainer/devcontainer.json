@@ -19,14 +19,14 @@
           "version": "2.0.0",
           "tasks": [
             {
-              "label": "First",
+              "label": "Wait for noVNC",
               "type": "shell",
-              "command": "echo 'First Task.'; sleep 5;"
+              "command": "./.contconf/waitForNoVNC.bash"
             },
             {
               "label": "Second",
               "type": "shell",
-              "command": "echo 'Second Task.'"
+              "command": "echo ${"
             },
             {
               "label": "Sequence",
