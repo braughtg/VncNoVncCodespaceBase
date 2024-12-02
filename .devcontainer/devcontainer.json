@@ -12,7 +12,6 @@
   "remoteUser": "student",
   "workspaceFolder": "/home/student",
   "overrideCommand": false,
-  "initializeCommand": "echo 'Initialized command output here.'",
   "customizations": {
     "vscode": {
       "settings": {
@@ -20,8 +19,14 @@
           "version": "2.0.0",
           "tasks": [
             {
-              "label": "Hide sidebar",
-              "command": "workbench.action.toggleSidebarVisibility"
+              "label": "Hide UI Elements",
+              "command": "runCommands", 
+		          "args": {
+			          "commands": [
+                  "workbench.action.closeSidebar",
+                  "workbench.action.closePanel"
+			          ]
+		          }
             },
             {
               "label": "Wait for noVNC",
@@ -36,7 +41,7 @@
               "label": "Open Linux Desktop",
               "type": "shell",
               "dependsOrder": "sequence",
-              "dependsOn": [ "Wait for noVNC", "Open noVNC in Browser" ],
+              "dependsOn": [ "Hide UI Elements", "Wait for noVNC", "Open noVNC in Browser" ],
               "runOptions": {
                 "runOn": "folderOpen"
               },
