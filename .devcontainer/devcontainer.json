@@ -25,7 +25,10 @@
             {
               "label": "Wait for noVNC",
               "type": "shell",
-              "command": "./.contconf/waitForNoVNC.bash"
+              "command": "./.contconf/waitForNoVNC.bash",
+              "presentation": {
+                "reveal": "never"
+              }
             },
             {
               "label": "Open noVNC in Browser",
@@ -44,8 +47,7 @@
                 "runOn": "folderOpen"
               },
               "presentation": {
-                "reveal": "never",
-                "panel": "shared"
+                "reveal": "never"
               }
             }
           ],
