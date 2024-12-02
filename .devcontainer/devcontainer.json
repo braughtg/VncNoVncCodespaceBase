@@ -26,10 +26,10 @@
             {
               "label": "Open noVNC in Browser",
               "type": "shell",
-              "command": "echo $(jq -r '.CODESPACE_NAME' < /workspaces/.codespaces/shared/enviornment-variables.json)"
+              "command": "./.contconf/vncStarted.bash"
             },
             {
-              "label": "Sequence",
+              "label": "Open Linux Desktop",
               "type": "shell",
               "dependsOrder": "sequence",
               "dependsOn": [ "Wait for noVNC", "Open noVNC in Browser" ],

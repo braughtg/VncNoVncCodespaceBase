@@ -23,4 +23,4 @@ echo -n "Waiting for noVNC server to start ... "
 ) & spinner
 
 echo ""
-echo "noVNC Server has started.
+echo "noVNC Server has started."
