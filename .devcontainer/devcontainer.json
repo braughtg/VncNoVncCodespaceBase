@@ -19,31 +19,28 @@
         "tasks": {
           "version": "2.0.0",
           "tasks": [
-            // {
-            //   "label": "Wait for noVNC",
-            //   "type": "shell",
-            //   "command": "./.contconf/waitForNoVNC.bash"
-            // },
+            {
+              "label": "Wait for noVNC",
+              "type": "shell",
+              "command": "./.contconf/waitForNoVNC.bash"
+            },
             {
               "label": "Open noVNC in Browser",
-              "command": "$(input:openSimpleBrowser",
+              "command": "${input:openSimpleBrowser}",
+            },
+            {
+              "label": "Open Linux Desktop",
+              "type": "shell",
+              "dependsOrder": "sequence",
+              "dependsOn": [ "Wait for noVNC", "Open noVNC in Browser" ],
               "runOptions": {
                 "runOn": "folderOpen"
+              },
+              "presentation": {
+                "reveal": "always",
+                "panel": "shared"
               }
-            },
-            // {
-            //   "label": "Open Linux Desktop",
-            //   "type": "shell",
-            //   "dependsOrder": "sequence",
-            //   "dependsOn": [ "Wait for noVNC", "Open noVNC in Browser" ],
-            //   "runOptions": {
-            //     "runOn": "folderOpen"
-            //   },
-            //   "presentation": {
-            //     "reveal": "always",
-            //     "panel": "shared"
-            //   }
-            // }
+            }
           ],
           "inputs": [
             {
