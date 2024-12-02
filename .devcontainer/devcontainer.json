@@ -20,13 +20,7 @@
           "tasks": [
             {
               "label": "Hide UI Elements",
-              "command": "runCommands", 
-		          "args": {
-			          "commands": [
-                  "${command:workbench.action.closeSidebar}",
-                  "${command:workbench.action.closePanel}"
-			          ]
-		          }
+              "command": "${input:hideUIElements}"
             },
             {
               "label": "Wait for noVNC",
@@ -35,7 +29,7 @@
             },
             {
               "label": "Open noVNC in Browser",
-              "command": "${input:openSimpleBrowser}",
+              "command": "${input:openSimpleBrowser}"
             },
             {
               "label": "Open Linux Desktop",
@@ -57,6 +51,16 @@
               "type": "command",
               "command": "simpleBrowser.show",
               "args": ["https://${env:CODESPACE_NAME}-6901.app.github.dev"]
+            },
+            {
+              "id": "hideUIElements",
+              "command": "runCommands", 
+		          "args": {
+			          "commands": [
+                  "${command:workbench.action.closeSidebar}",
+                  "${command:workbench.action.closePanel}"
+			          ]
+		          }
             }
           ]
         }
