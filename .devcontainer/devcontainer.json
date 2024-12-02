@@ -68,8 +68,10 @@
                   "workbench.action.activityBarLocation.hide",
                   "workbench.action.hideEditorTabs",
                   "workbench.action.hideEditorActions",
+                  "workbench.action.togglePanel",
                   "workbench.action.toggleStatusbarVisibility",
-                  "toggle.window.commandCenter"
+                  "toggle.window.commandCenter",
+                  "toggle.workbench.layoutControl"
 			          ]
 		          }
             }
