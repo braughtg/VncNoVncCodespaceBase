@@ -23,8 +23,8 @@
               "command": "runCommands", 
 		          "args": {
 			          "commands": [
-                  "workbench.action.closeSidebar",
-                  "workbench.action.closePanel"
+                  "${command:workbench.action.closeSidebar}",
+                  "${command:workbench.action.closePanel}"
 			          ]
 		          }
             },
