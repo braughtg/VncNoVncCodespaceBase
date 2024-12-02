@@ -26,7 +26,7 @@
             {
               "label": "Second",
               "type": "shell",
-              "command": "echo ${"
+              "command": "echo 'Second'"
             },
             {
               "label": "Sequence",
