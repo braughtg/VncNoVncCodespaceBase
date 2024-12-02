@@ -68,8 +68,8 @@
                   "workbench.action.activityBarLocation.hide",
                   "workbench.action.hideEditorTabs",
                   "workbench.action.hideEditorActions",
-                  "hideCustomTitleBar",
-                  
+                  "workbench.action.toggleStatusbarVisibility",
+                  "toggle.window.commandCenter"
 			          ]
 		          }
             }
