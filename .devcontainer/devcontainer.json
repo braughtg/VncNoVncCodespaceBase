@@ -35,7 +35,11 @@
               "label": "Open Linux Desktop",
               "type": "shell",
               "dependsOrder": "sequence",
-              "dependsOn": ["Wait for noVNC", "Open noVNC in Browser", "Hide UI Elements" ],
+              "dependsOn": [
+                "Hide UI Elements", 
+                "Wait for noVNC", 
+                "Open noVNC in Browser"
+              ],
               "runOptions": {
                 "runOn": "folderOpen"
               },
@@ -59,7 +63,13 @@
 		          "args": {
 			          "commands": [
                   "workbench.action.closeSidebar",
-                  "workbench.action.closePanel"
+                  "workbench.action.closePanel",
+                  "workbench.action.closeAllEditors",
+                  "workbench.action.activityBarLocation.hide",
+                  "workbench.action.hideEditorTabs",
+                  "workbench.action.hideEditorActions",
+                  "hideCustomTitleBar",
+                  
 			          ]
 		          }
             }
