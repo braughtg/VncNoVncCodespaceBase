@@ -56,7 +56,7 @@
               "id": "openSimpleBrowser",
               "type": "command",
               "command": "simpleBrowser.show",
-              "args": ["https://${env:CODESPACE_NAME}-6901.app.github.dev"]
+              "args": ["https://${env:CODESPACE_NAME}-6901.app.github.dev?autoconnect=true&resize=remote"]
             },
             {
               "id": "hideUIElements",
