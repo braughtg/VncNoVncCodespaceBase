@@ -71,7 +71,8 @@
                   "workbench.action.hideEditorTabs",
                   "workbench.action.hideEditorActions",
                   "workbench.action.toggleStatusbarVisibility",
-                  "toggle.window.commandCenter"
+                  "toggle.window.commandCenter",
+                  "toggle.workbench.layoutControl.enabled"
 			          ]
 		          }
             }
